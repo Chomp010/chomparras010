@@ -2,20 +2,6 @@ let output = require("../../config.js");
 
 // You change gamemodes here
 // To change specific things about specific gamemodes (such as team count for tdm), visit their config file in \gamemodeconfigs\
-/*Math.seed = function(s) {
-    var mask = 0xffffffff;
-    var m_w  = (123456789 + s) & mask;
-    var m_z  = (987654321 - s) & mask;
-
-    return function() {
-      m_z = (36969 * (m_z & 65535) + (m_z >>> 16)) & mask;
-      m_w = (18000 * (m_w & 65535) + (m_w >>> 16)) & mask;
-
-      var result = ((m_z << 16) + (m_w & 65535)) >>> 0;
-      result /= 4294967296;
-      return result;
-    }
-}*/
 var seed = Math.floor(Math.random()*1e16);
 
 let siegecombine;
@@ -49,17 +35,15 @@ else { maincombine = 'opentdm'; }
      if (seed % 2 >= 1) { mainteamcombine = 'tdm'; }
 else { mainteamcombine = 'opentdm'; }
 
-     if (seed % 22 >= 21) { gamemodechosen = [maincombine]; }
-else if (seed % 22 >= 20) { gamemodechosen = [mainteamcombine]; }
-else if (seed % 22 >= 18) { gamemodechosen = [mapcombine, maincombine]; }
-else if (seed % 22 >= 17) { gamemodechosen = [secondcombine, maincombine]; }
-else if (seed % 22 >= 15) { gamemodechosen = [teamcombine, mainteamcombine]; }
+     if (seed % 22 >= 20) { gamemodechosen = [mapcombine, maincombine]; }
+else if (seed % 22 >= 18) { gamemodechosen = [secondcombine, maincombine]; }
+else if (seed % 22 >= 16) { gamemodechosen = [teamcombine, mainteamcombine]; }
 else if (seed % 22 >= 14) { gamemodechosen = [secondcombine, mainteamcombine]; }
-else if (seed % 22 >= 12) { gamemodechosen = [secondcombine, mapcombine, maincombine]; }
-else if (seed % 22 >= 9) { gamemodechosen = [mapcombine, teamcombine, mainteamcombine]; }
-else if (seed % 22 >= 7) { gamemodechosen = [secondcombine, teamcombine, mainteamcombine]; }
-else if (seed % 22 >= 6) { gamemodechosen = [secondcombine, mapcombine, teamcombine, mainteamcombine]; }
-else if (seed % 22 >= 3) { gamemodechosen = ['siege', siegecombine]; }
+else if (seed % 22 >= 13) { gamemodechosen = [secondcombine, mapcombine, maincombine]; }
+else if (seed % 22 >= 12) { gamemodechosen = [mapcombine, teamcombine, mainteamcombine]; }
+else if (seed % 22 >= 11) { gamemodechosen = [secondcombine, teamcombine, mainteamcombine]; }
+else if (seed % 22 >= 10) { gamemodechosen = [secondcombine, mapcombine, teamcombine, mainteamcombine]; }
+else if (seed % 22 >= 5) { gamemodechosen = ['siege', siegecombine]; }
 else { gamemodechosen = ['blockade']; }
 
 const gamemodes = gamemodechosen;
