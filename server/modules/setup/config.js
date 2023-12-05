@@ -24,7 +24,7 @@ else { teamcombine = 'trainwars'; }
 else if (seed % 7 >= 1) { mapcombine = 'portal'; }
 else { mapcombine = 'space'; }
 
-     if (seed % 4 >= 3) { secondcombine = 'growth'; }
+     if (seed % 4 >= 2) { secondcombine = 'growth'; }
 else { secondcombine = 'armsrace'; }
 
      if (seed % 10 >= 7) { maincombine = 'ffa'; }
