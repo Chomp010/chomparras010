@@ -3524,6 +3524,8 @@ exports.triplet = {
         },
     ],
 };
+// BENT HYBRID UPGRADES
+exports.smearer = makeHybrid(exports.spreadshot, "Smearer");
 // BENT DOUBLE UPGRADES
 exports.bentTriple = {
     PARENT: ["genericTank"],
@@ -9985,6 +9987,8 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "bentTrapper", "bentSingle"];
             exports.pentaShot.UPGRADES_TIER_4 = ["quintuplet"];
             exports.triplet.UPGRADES_TIER_4 = ["quintuplet"];
+            exports.bentHybrid.UPGRADES_TIER_4 = ["smearer"];
+            exports.spreadshot.UPGRADES_TIER_4 = ["smearer"];
         exports.wark.UPGRADES_TIER_3 = ["bentTrapper", "bulwark"];
         exports.twinSniper.UPGRADES_TIER_3 = ["dual", "musket"];
 
